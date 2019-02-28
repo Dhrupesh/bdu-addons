@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Backend -->
+  <record id="view_pubble_back_end_view_form" model="ir.ui.view">
+    <field name="name">pubble.backend.form</field>
+    <field name="model">pubble.backend</field>
+    <field name="arch" type="xml">
+      <form string="Pubble Backend">
+         <header>
+          <button name="check_connection" type="object" class="oe_highlight" string="Test Connection"/>
+        </header>
+      
+      <sheet string="Pubble Connection">
+        	 <group>
+				<field name="transmission_id"/>   
+				<field name="uri"/>
+				<field name="publisher"/>
+				<field name="apiKey"/>     
+			</group>
+        </sheet>
+      </form>
+   	</field>
+   </record>
+   
+   <record id="view_pubble_back_end_view_tree" model="ir.ui.view">
+    <field name="name">pubble.backend.tree</field>
+    <field name="model">pubble.backend</field>
+    <field name="arch" type="xml">
+      <tree string="Pubble Backend">
+      	<field name="transmission_id"/>   
+		<field name="uri"/>
+		<field name="publisher"/>
+		<field name="apiKey"/>     
+      </tree>
+    </field>
+   </record>
+      
+   <record id="action_pubble_backend" model="ir.actions.act_window">
+    <field name="name">Pubble Backends</field>
+    <field name="res_model">pubble.backend</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_pubble_backend"
+    name="Backends"
+    action="action_pubble_backend" parent="connector.menu_connector"/>
+    
+</odoo>

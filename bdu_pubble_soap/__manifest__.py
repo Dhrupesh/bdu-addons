@@ -116,7 +116,8 @@ To contribute to this module, please visit https://odoo-community.org.
 
     # any module necessary for this one to work correctly
     'depends': ['sale_advertising_order',
-                'sale_advertising_operating_unit'
+                'sale_advertising_operating_unit',
+                'connector',
     ],
     'external_dependencies': {
         'python': ['suds'],
@@ -127,6 +128,7 @@ To contribute to this module, please visit https://odoo-community.org.
              'security/ir.model.access.csv',
              'views/sale_advertising_order.xml',
              'views/product_view.xml',
+             'views/pubble_backend_view.xml',
              'wizard/sale_order_state_view.xml'
     ],
     # only loaded in demonstration mode

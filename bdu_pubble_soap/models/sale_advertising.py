@@ -211,10 +211,10 @@ class SaleOrderLine(models.Model):
     @api.depends('ad_class', 'adv_issue')
     def _compute_allowed(self):
         for line in self.filtered('advertising'):
-            res = False
-            if line.ad_class.pubble and line.adv_issue.medium.pubble:
-                res = True
-            line.line_pubble_allow = res
+#             res = False
+#             if line.ad_class.pubble and line.adv_issue.medium.pubble:
+#                 res = True
+            line.line_pubble_allow = True
 
 
     pubble_sent = fields.Boolean('Order Line sent to Pubble', copy=False)
@@ -385,5 +385,6 @@ class SoLinefromOdootoPubble(models.Model):
     ad_materialid = fields.Integer(string='Material ID')
     ad_materialUrl = fields.Char(string='URL to Material')
     ad_materialChecksum = fields.Char(string='Material Checksum')
+
 
 

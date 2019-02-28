@@ -136,8 +136,8 @@
             <field name="arch" type="xml">
                 <group name="ad_refs" position="after">
                     <group string="Pubble" name="pubble" >
-                        <field name="line_pubble_allow" readonly="1" />
-                        <field name="pubble_sent" readonly="1"/>
+                        <field name="line_pubble_allow" />
+                        <field name="pubble_sent" />
                     </group>
                 </group>
                 <group name="sale_pay" position="after">
